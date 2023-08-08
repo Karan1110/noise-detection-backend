@@ -7,7 +7,7 @@ const cors = require("cors")
 
 module.exports = function (app) {
   app.use(express.json())
-  app.use(express.static("./uploads"))
+  app.use("/uploads", express.static("./uploads"))
   app.use("/api/sessions", sessions)
   app.use("/api/users", users)
   app.use("/api/auth", auth)
